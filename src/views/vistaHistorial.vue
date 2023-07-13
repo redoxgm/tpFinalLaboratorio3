@@ -27,8 +27,6 @@
     "a2 a2";
 }
 
-/* spacing */
-
 table {
   table-layout: fixed;
   width: 100%;
