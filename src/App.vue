@@ -3,7 +3,8 @@
     <div class="barraNavegacion">
       <nav>
         <router-link to="/">inicio</router-link> |
-        <router-link to="/about">Historial</router-link>
+        <RouterLink to="/Historial">Historial</RouterLink>|
+        <RouterLink to="/AnalisisInversiones">Analisis</RouterLink>
       </nav>
     </div>
     <router-view />
@@ -11,6 +12,13 @@
 </template>
 
 <style>
+.barraNavegacion {
+  text-align: left;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,6 +1,5 @@
 <template>
   <div class="grid-layout">
-    <!-- <HelloWorld msg="borrar despues" /> -->
     <div class="barraSuperior">
       <p id="usuario">Usuario: <input id="txtUsuario" type="text" /></p>
 
@@ -9,7 +8,7 @@
 
     <div class="compra">
       <p class="txt">Comprar</p>
-      <select class="opcionCripto" name="criptoMoneda" id="criptoVender">
+      <select class="opcionCripto" name="criptoMoneda">
         <option value="btc">BitCoin</option>
         <option value="ETH">Etherium</option>
         <option value="USDT">Tether</option>
@@ -23,7 +22,7 @@
 
     <div class="venta">
       <p class="txt">venta</p>
-      <select class="opcionCripto" name="criptoMoneda" id="criptoVender">
+      <select class="opcionCripto" name="criptoMoneda">
         <option value="btc">BitCoin</option>
         <option value="ETH">Etherium</option>
         <option value="USDT">Tether</option>
@@ -34,16 +33,28 @@
       <input type="text" />
       <p class="txt">precio:</p>
     </div>
+    <div class="estadoActual">
+      <h1>Analisis de Estado</h1>
+      <h1>Total Ivertido:</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>CriptoMoneda</th>
+            <th>Cantidad</th>
+            <th>Valor Monetario</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .grid-layout {
   display: grid;
-
+  background-color: blue;
   width: 100%;
   height: 100%;
-
   grid-template-areas:
     "barra barra"
     "n1 n1"
@@ -56,6 +67,7 @@
   grid-area: n1;
   width: 100%;
   height: 100%;
+  grid-area: "barra";
 }
 
 .compra {
@@ -72,12 +84,38 @@
   height: 100%;
 }
 
-.barraNavegacion {
-  text-align: left;
-  background-color: black;
+.estadoActual {
+  color: black;
+  grid-area: n4;
+  background-color: brown;
+}
+
+table {
+  table-layout: fixed;
   width: 100%;
-  height: 100%;
-  grid-area: "barra";
+  border-collapse: collapse;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+thead th:nth-child(1) {
+  width: 40%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  padding: 20px;
 }
 
 .opcionCripto {
@@ -123,9 +161,7 @@
 </style>
 
 <script>
-// // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
-
 // export default {
 //   name: "HomeView",
 //   components: {
