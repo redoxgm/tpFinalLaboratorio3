@@ -1,25 +1,25 @@
 <template>
   <div class="grid-layout">
     <div class="cabecera">
-      <h1>Historial de transacciones</h1>
+      <h1>Análisis de Inversiones</h1>
     </div>
-
-    <div class="historial">
-      <tr>
-        <th>Cripto Moneda</th>
-        <th>Compra/Venta</th>
-        <th>Precio Transacción</th>
-        <th>Cantida de Criptos</th>
-        <th>Ganancias</th>
-      </tr>
+    <div class="inversiones">
+      <table>
+        <thead>
+          <tr>
+            <th>Cripto Moneda</th>
+            <th>Perdidas</th>
+            <th>Ganancias</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .grid-layout {
   display: grid;
-
   width: 100%;
   height: 100%;
   grid-template-areas:
@@ -27,13 +27,20 @@
     "a2 a2";
 }
 
-/* spacing */
+.cabesera {
+  grid-area: "a1";
+}
+
+.inversiones {
+  grid-area: "a2";
+}
 
 table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid purple;
+  border: 3px solid rgb(0, 0, 0);
+  color: black;
 }
 
 thead th:nth-child(1) {
@@ -55,15 +62,5 @@ thead th:nth-child(4) {
 th,
 td {
   padding: 20px;
-}
-
-.cabecera {
-  grid-area: a1;
-  background-color: blue;
-}
-
-.historial {
-  grid-area: a2;
-  background-color: red;
 }
 </style>
