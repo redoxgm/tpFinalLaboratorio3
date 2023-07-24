@@ -3,8 +3,8 @@
     <div class="barraNavegacion">
       <nav>
         <router-link to="/">inicio</router-link> |
-        <RouterLink to="/Historial">Historial</RouterLink>|
-        <RouterLink to="/AnalisisInversiones">Analisis</RouterLink>
+        <RouterLink to="/historialViews">Historial</RouterLink>|
+        <RouterLink to="/analisisViewss">Analisis</RouterLink>|
       </nav>
     </div>
     <router-view />

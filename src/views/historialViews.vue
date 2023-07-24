@@ -19,7 +19,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .grid-layout {
   display: grid;
 
@@ -61,7 +61,7 @@ td {
 
 .cabecera {
   grid-area: a1;
-  background-color: rgb(14, 14, 170);
+  background-color: tomato;
   color: black;
 }
 
