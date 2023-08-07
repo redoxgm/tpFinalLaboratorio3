@@ -1,14 +1,16 @@
 <template>
   <div class="grid-layout">
     <div class="barraSuperior">
-      <p id="usuario">Usuario: <input id="txtUsuario" type="text" /></p>
-
+      <p id="usuario">
+        Usuario: <input id="txtUsuario" type="text" v-model="usuario" />
+      </p>
+      <p>usuario {{ usuario }}</p>
       <h1>CRIPTOWALLET</h1>
     </div>
 
     <div class="compra">
       <p class="txt">Comprar</p>
-      <select class="opcionCripto" name="criptoMoneda">
+      <select class="opcionCripto" name="criptoMoneda" id="compra">
         <option value="btc">BitCoin</option>
         <option value="ETH">Etherium</option>
         <option value="USDT">Tether</option>
@@ -22,7 +24,7 @@
 
     <div class="venta">
       <p class="txt">venta</p>
-      <select class="opcionCripto" name="criptoMoneda">
+      <select class="opcionCripto" name="criptoMoneda" id="venta">
         <option value="btc">BitCoin</option>
         <option value="ETH">Etherium</option>
         <option value="USDT">Tether</option>
@@ -42,6 +44,7 @@
             <th>CriptoMoneda</th>
             <th>Cantidad</th>
             <th>Valor Monetario</th>
+            <th>Accion</th>
           </tr>
         </thead>
       </table>
@@ -64,6 +67,7 @@
 
 .barraSuperior {
   background-color: tomato;
+  color: black;
   grid-area: n1;
   width: 100%;
   height: 100%;
@@ -161,11 +165,29 @@ td {
 </style>
 
 <script>
+export default {
+  data() {
+    return {
+      usuario: "",
+    };
+  },
+  mounted() {
+    if (localStorage.usuario) {
+      this.usuario = localStorage.usuario;
+    }
+  },
+  watch: {
+    usuario(newUsuario) {
+      localStorage.usuario = newUsuario;
+    },
+  },
+  methods: {},
+};
 // import HelloWorld from "@/components/HelloWorld.vue";
 // export default {
 //   name: "HomeView",
 //   components: {
 //     HelloWorld,
 //   },
-// };
+// }
 </script>

@@ -31,18 +31,20 @@
 .cabecera {
   background-color: tomato;
   grid-area: area1;
+  color: black;
 }
 
 .inversiones {
   background-color: brown;
   grid-area: area2;
+  color: black;
 }
 
 table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid rgb(0, 0, 0);
+  border: 3px solid black;
   color: black;
 }
 
