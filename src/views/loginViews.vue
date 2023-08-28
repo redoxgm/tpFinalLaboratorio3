@@ -10,13 +10,19 @@
 
     <div class="compra">
       <p class="txt">Comprar</p>
-      <select class="opcionCripto" name="criptoMoneda" id="compra">
-        <option value="btc">BitCoin</option>
-        <option value="ETH">Etherium</option>
-        <option value="USDT">Tether</option>
-        <option value="BNB">BNB</option>
-        <option value="USDC">USD Coin</option>
-        <option value="DOGE">Dogecoin</option>
+      <select
+        class="opcionCripto"
+        name="criptoMoneda"
+        id="compra"
+        v-model="opcionCompra"
+      >
+        <option
+          v-for="opcion in opciones"
+          :key="opcion.valor"
+          :value="opcion.valor"
+        >
+          {{ opcion.cripto }}
+        </option>
       </select>
       <input type="text" />
       <p class="txt">precio:</p>
@@ -24,13 +30,19 @@
 
     <div class="venta">
       <p class="txt">venta</p>
-      <select class="opcionCripto" name="criptoMoneda" id="venta">
-        <option value="btc">BitCoin</option>
-        <option value="ETH">Etherium</option>
-        <option value="USDT">Tether</option>
-        <option value="BNB">BNB</option>
-        <option value="USDC">USD Coin</option>
-        <option value="DOGE">Dogecoin</option>
+      <select
+        class="opcionCripto"
+        name="criptoMoneda"
+        id="venta"
+        v-model="opcionVenta"
+      >
+        <option
+          v-for="opcion in opciones"
+          :key="opcion.valor"
+          :value="opcion.valor"
+        >
+          {{ opcion.cripto }}
+        </option>
       </select>
       <input type="text" />
       <p class="txt">precio:</p>
@@ -169,6 +181,15 @@ export default {
   data() {
     return {
       usuario: "",
+      opcionCompra: "",
+      opcionVenta: "",
+      opciones: [
+        { valor: "btc", cripto: "BitCoin" },
+        { valor: "ETH", cripto: "Etherium" },
+        { valor: "USDT", cripto: "Tether" },
+        { valor: "BNB", cripto: "BNB" },
+        { valor: "USDC", cripto: "USDC" },
+      ],
     };
   },
   mounted() {
